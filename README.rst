@@ -8,7 +8,7 @@ pythonnet - Python for .NET
 |license shield| |pypi package version| |python supported shield|
 |stackexchange shield|
 
-Python for .NET 是一个包，可以让 Python 程序员几乎无缝集成 .NET 公共语言
+Python for .NET 是一个包，它可以让 Python 程序员几乎无缝集成 .NET 公共语言
 运行时 (CLR)，并为 .NET 开发者提供一个功能强大的应用程序脚本工具。它允许 
 Python 代码与 CLR 交互，也可以用于将 Python 嵌入到 .NET 应用程序中。
 
