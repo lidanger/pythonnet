@@ -8,17 +8,14 @@ pythonnet - Python for .NET
 |license shield| |pypi package version| |python supported shield|
 |stackexchange shield|
 
-Python for .NET is a package that gives Python programmers nearly
-seamless integration with the .NET Common Language Runtime (CLR) and
-provides a powerful application scripting tool for .NET developers. It
-allows Python code to interact with the CLR, and may also be used to
-embed Python into a .NET application.
+Python for .NET 是一个包，可以让 Python 程序员几乎无缝集成 .NET 公共语言
+运行时 (CLR)，并为 .NET 开发者提供一个功能强大的应用程序脚本工具。它允许 
+Python 代码与 CLR 交互，也可以用于将 Python 嵌入到 .NET 应用程序中。
 
-Calling .NET code from Python
+在 Python 中调用 .NET 代码
 -----------------------------
 
-Python for .NET allows CLR namespaces to be treated essentially as
-Python packages.
+Python for .NET 允许将 CLR 命名空间当作真正的 Python 包。
 
 .. code-block::
 
@@ -26,8 +23,7 @@ Python packages.
    from System import String
    from System.Collections import *
 
-To load an assembly, use the ``AddReference`` function in the ``clr``
-module:
+要加载程序集，请使用 ``clr`` 模块中的 ``AddReference`` 函数:
 
 .. code-block::
 
@@ -35,22 +31,20 @@ module:
    clr.AddReference("System.Windows.Forms")
    from System.Windows.Forms import Form
 
-Embedding Python in .NET
+在 .NET 中嵌入 Python
 ------------------------
 
--  All calls to python should be inside a
-   ``using (Py.GIL()) {/* Your code here */}`` block.
--  Import python modules using ``dynamic mod = Py.Import("mod")``, then
-   you can call functions as normal, eg ``mod.func(args)``.
--  Use ``mod.func(args, Py.kw("keywordargname", keywordargvalue))`` or
-   ``mod.func(args, keywordargname: keywordargvalue)`` to apply keyword
-   arguments.
--  All python objects should be declared as ``dynamic`` type.
--  Mathematical operations involving python and literal/managed types
-   must have the python object first, eg. ``np.pi * 2`` works,
-   ``2 * np.pi`` doesn't.
+-  所有对 python 的调用应该被包含在一个 
+   ``using (Py.GIL()) {/* Your code here */}`` 块中。
+-  使用 ``dynamic mod = Py.Import("mod")`` 导入 python 模块，然后你就可以
+   像平常一样调用函数，例如 ``mod.func(args)``。
+-  使用 ``mod.func(args, Py.kw("keywordargname", keywordargvalue))`` 或
+   ``mod.func(args, keywordargname: keywordargvalue)`` 来应用关键字参数。
+-  所有 python 对象都应该被声明为 ``dynamic`` 类型。
+-  涉及 python 和字面值/托管类型的数学操作必须先使用 python 对象，例如，
+   ``np.pi * 2`` 有效，``2 * np.pi`` 不行。
 
-Example
+示例
 ~~~~~~~
 
 .. code-block:: csharp
@@ -79,7 +73,7 @@ Example
        }
    }
 
-Output:
+输出:
 
 .. code::
 
@@ -90,10 +84,9 @@ Output:
    int32
    [  6.  10.  12.]
 
-Information on installation, FAQ, troubleshooting, debugging, and
-projects using pythonnet can be found in the Wiki:
+关于安装、常见问题、故障排除、调试和使用 pythonnet 项目的信息，可以在 Wiki 中找到:
 
-https://github.com/pythonnet/pythonnet/wiki
+https://github.com/lidanger/pythonnet/wiki
 
 .. |Join the chat at https://gitter.im/pythonnet/pythonnet| image:: https://badges.gitter.im/pythonnet/pythonnet.svg
    :target: https://gitter.im/pythonnet/pythonnet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
